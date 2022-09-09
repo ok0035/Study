@@ -8,6 +8,7 @@ object Versions {
     const val HILT_VER = "2.42"
     const val CORE_KTX_VER = "1.8.0"
     const val FRAGMENT_KTX_VER = "1.4.1"
+    const val ACTIVITY_KTX_VER = "1.5.1"
 
     const val RETROFIT_VER = "2.9.0"
     const val GSON_VER = "2.9.0"
@@ -37,7 +38,8 @@ object Libraries {
 
     object KTX {
         const val CORE = "androidx.core:core-ktx:${Versions.CORE_KTX_VER}"
-        const val FRAGMENT = "androidx.fragment:fragment-ktx:${Versions.FRAGMENT_KTX_VER}"
+        const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${Versions.FRAGMENT_KTX_VER}"
+        const val ACTIVITY_KTX = "androidx.activity:activity-ktx:${Versions.ACTIVITY_KTX_VER}"
     }
 
     object Coroutine {
@@ -58,6 +60,7 @@ object Libraries {
     object Hilt {
         const val ANDROID = "com.google.dagger:hilt-android:${Versions.HILT_VER}"
         const val COMPILER_KAPT = "com.google.dagger:hilt-compiler:${Versions.HILT_VER}"
+        const val PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:${Versions.HILT_VER}"
     }
 
     object Lottie {
@@ -67,6 +70,7 @@ object Libraries {
     object Network {
         const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT_VER}"
         const val GSON = "com.squareup.retrofit2:converter-gson:${Versions.GSON_VER}"
+        const val GSON_CONVERTER = "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT_VER}"
         const val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OK_HTTP_VER}"
         const val INTERCEPTER = "com.squareup.okhttp3:logging-interceptor:${Versions.OK_HTTP_VER}"
         const val SANDWICH = "com.github.skydoves:sandwich:${Versions.SANDWICH_VER}"

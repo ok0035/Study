@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -37,17 +38,33 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    packagingOptions {
+        exclude("META-INF/gradle/incremental.annotation.processors")
+    }
 }
 
 dependencies {
+
+    implementation(project(":network"))
 
     implementation(Libraries.KTX.CORE)
     implementation(Libraries.AndroidX.APP_COMPAT)
     implementation(Libraries.AndroidX.MATERIAL)
     implementation(Libraries.AndroidX.CONSTRAINT_LAYOUT)
 
+    implementation(Libraries.KTX.FRAGMENT_KTX)
+    implementation(Libraries.KTX.ACTIVITY_KTX)
+
     implementation(Libraries.Hilt.ANDROID)
-    implementation(Libraries.Hilt.COMPILER_KAPT)
+    kapt(Libraries.Hilt.COMPILER_KAPT)
+
+    implementation(Libraries.Network.RETROFIT)
+    implementation(Libraries.Network.GSON)
+    implementation(Libraries.Network.GSON_CONVERTER)
+    implementation(Libraries.Network.SANDWICH)
+    implementation(Libraries.Network.INTERCEPTER)
+    implementation(Libraries.Network.OKHTTP)
 
     implementation(Libraries.Log.TIMBER)
 
